@@ -1,0 +1,21 @@
+@mixin buttonColorGlow($c1, $c2) {
+  color: $c1;
+}
+
+.main-menu {
+  width: 1505.27px;
+  height: 100%;
+  display: flex;
+  align-content: space-around;
+  margin: 14px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.actions {
+  display: flex;
+  .learn {
+    text-decoration: none;
+    margin: auto;
+  }
+}

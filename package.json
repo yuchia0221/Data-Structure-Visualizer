@@ -1,0 +1,13 @@
+{
+    "name": "data_structure_visualizer",
+    "version": "1.0.0",
+    "description": "",
+    "scripts": {
+        "dev": "cd backend && npm run dev",
+        "start": "cd frontend && npm start",
+        "server": "cd backend && npm run server"
+    },
+    "keywords": [],
+    "author": "Yu-Chia Chen (yuchiachen99@gmail.com), Jimmy Lin (linchiachieh1024@gmail.com), hu0810 (https://github.com/hu0810)",
+    "license": "ISC"
+}

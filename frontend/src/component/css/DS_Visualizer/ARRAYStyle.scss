@@ -1,0 +1,145 @@
+@mixin highlight($color) {
+  color: rgb(255, 255, 255);
+  text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px $color, 0 0 20px $color,
+    0 0 25px $color, 0 0 30px $color, 0 0 35px $color;
+}
+
+.array ul {
+  padding: 0;
+  padding-top: 20px;
+  position: relative;
+  transition: all 0.5s;
+}
+
+.array > ul {
+  display: table;
+
+  margin: 0 auto;
+}
+
+.array li {
+  float: left;
+  text-align: center;
+  list-style-type: none;
+  position: relative;
+  padding: 10px 1px 0 1px;
+  transition: all 0.5s;
+}
+
+/* Line Styles starts*/
+.array li::before,
+.array li::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 50%;
+  border-top: 1px solid #ccc;
+  width: 50%;
+  height: 10px;
+  transition: all 0.5s;
+}
+.array li::after {
+  right: auto;
+  left: 50%;
+  border-left: 1px solid #ccc;
+}
+
+.array li:last-child::before {
+  border-right: 1px solid #ccc;
+  border-radius: 0 5px 0 0;
+}
+
+.array li:first-child::after {
+  border-radius: 5px 0 0 0;
+}
+
+.array ul ul::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  border-left: 1px solid #ccc;
+  width: 0;
+  height: 20px;
+  transition: all 0.5s;
+}
+
+.array li:only-child::after,
+.array li:only-child::before {
+  display: none;
+}
+
+.array li:only-child {
+  padding-top: 0;
+}
+
+.array li:first-child::before,
+.array li:last-child::after {
+  border: 0 none;
+}
+
+/* Node Styles starts*/
+.array li div {
+  padding: 6px 12px;
+  text-decoration: none;
+  color: #666;
+  font-family: arial, verdana, tahoma;
+  font-size: 20px;
+  display: inline-block;
+  box-shadow: -5px -5px 20px #fff, 5px 5px 20px #babecc;
+  text-shadow: none;
+  border-radius: 200px;
+  transition: all 0.5s;
+
+  &.end {
+    color: rgb(194, 0, 0);
+  }
+
+  &.red {
+    background-color: rgba(218, 96, 96, 0.5);
+    text-shadow: none;
+  }
+
+  &.black {
+    background-color: rgba(172, 172, 172, 0.5);
+    text-shadow: none;
+  }
+
+  &.highlight {
+    @include highlight(#00ff15);
+    &.red {
+      @include highlight(#ff0000);
+    }
+
+    &.black {
+      @include highlight(#000000);
+    }
+  }
+}
+
+/* Hover Styles starts */
+.array li div:hover,
+.array li div:hover + ul li div.normal {
+  color: rgb(0, 37, 116);
+  box-shadow: -1px -1px 5px #fff, 1px 1px 5px #babecc;
+}
+
+.array li div:hover + ul li::after,
+.array li div:hover + ul li::before,
+.array li div:hover + ul::before,
+.array li div:hover + ul ul::before {
+  border-color: #5f6674;
+}
+
+li.null div {
+  color: rgba(124, 124, 124, 0.185);
+}
+
+.array li.null div:hover,
+.array li.null div:hover + ul li div {
+  color: rgba(255, 0, 0, 0.726);
+}
+
+.height {
+  font-size: 13px;
+}

@@ -1,0 +1,29 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
+
+.sort-Container {
+
+}
+
+.control {
+    margin-top: 20%;
+    z-index: 100;
+}
+
+.upperControl {
+    margin-top: 2rem;
+    width: 90%;
+}
+
+.array-bar {
+    display: inline-block;
+    margin: 0 1px;
+}
+
+.array-container {
+    margin-top: 2%;
+    margin-left: 2%;
+    width: 100%;
+}
